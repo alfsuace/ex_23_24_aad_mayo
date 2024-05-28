@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         }
         initLogin()
         initAnimals()
-        initAnimalDetail(1)
-        initOffers()
+        initAnimalBreed()
+        initTapas()
     }
 
     private fun initLogin() {
@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initAnimalDetail(animalId: Int) {
+    private fun initAnimalBreed() {
         thread {
-            //Ejecutar código para obtener un animal en concreto
+            //Ejecutar código para obtener todas razas almacenadas en la base de datos (sin repetir)
         }
     }
 
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initOffers() {
+    private fun initTapas() {
         thread {
             //Hacer la llamada al repositorio desde aquí.
         }

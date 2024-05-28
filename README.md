@@ -1,4 +1,4 @@
-# Examen Acceso a Datos Curso 23-24 (Marzo)
+# Examen Acceso a Datos Curso 23-24 (Junio)
 
 ## Aviso Importante
 
@@ -54,23 +54,24 @@ una caché local (Room) para no acceder siempre a remoto. Las premisas a cumplir
 
 1. Añadir las dependencias necesarias para trabajar con Room.
 2. La primera vez que se ejecuta la aplicación, se pedirán los datos a remoto.
-3. La segunda vez y posteriores, los datos a devolver serán de local.
-4. El listado de animales se visualizará por consola.
-5. La caché se hará con Room. **No es una caché TTL, no hace falta añadir tiempo**
-6. Si se pulsa el botón: Eliminar datos de Animales, se eliminarán los datos de local.
-7. Al volver a iniciar la app, se hará lo indicado en el paso 1.
-8. Se pide recuperar un único animal. El animal a recuperar puede ser cualquiera. El código está en
-   MainActivity.
+3. Los datos en local tendrán una vida de 5 minutos. Una vez pasado esos 5 minutos, se vuelven a
+   descargar de red.
+4. El listado de animales junto con el tipo y la raza se visualizará por consola.
+5. La caché TTL se hará con Room.
+6. Si se pulsa el botón: Eliminar datos de Animales, se eliminarán los datos del animal pero no los
+   del tipo ni de la raza.
+7. Se pide recuperar y visualizar todas las razas (AnimalBreed) que se encuentran en base de datos.
+   No se pueden mostrar datos duplicados.
 9. Añadir captura de la base de datos obtenida a través del IDE.
 
 ## Ejercicio 3: Firebase
 
-Se pide desarrollar una aplicación que recupere un listado de ofertas (id, description, title) de
-una base de datos distribuida (Firebase Realtime). Las premisas a cumplir son:
+Se pide desarrollar una base de datos en Firebase RealtimeDatabase con los modelos de Tapas.
+Las premisas a cumplir son:
 
 1. Añadir las dependencias necesarias para trabajar con Realtime Database.
 2. Configurar Firebase para poder trabajar con Realtime Database.
-3. Al ejecutarse la aplicación obtendrá el listado de ofertas desde firebase.
+3. Al ejecutarse la aplicación obtendrá el listado de tapas desde firebase.
 4. Se deberán mostrar los datos en la terminal.
 5. **No hay que guardar nada en local**. Siempre se obtendrán los datos desde remoto.
 

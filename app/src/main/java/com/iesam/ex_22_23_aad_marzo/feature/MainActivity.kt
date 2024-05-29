@@ -1,9 +1,16 @@
 package com.iesam.ex_22_23_aad_marzo.feature
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.google.firebase.database.FirebaseDatabase
 import com.iesam.ex_22_23_aad_marzo.R
+import com.iesam.ex_22_23_aad_marzo.feature.tapas.data.TapasDataRepository
+import com.iesam.ex_22_23_aad_marzo.feature.tapas.data.remote.TapasRemoteDataSource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -55,7 +62,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initTapas() {
         thread {
-            //Hacer la llamada al repositorio desde aquí.
+            lifecycleScope.launch (Dispatchers.IO){
+                val repo = TapasDataRepository(TapasRemoteDataSource(FirebaseDatabase.getInstance()))
+
+                val tapasList=repo.getTapas()
+                Log.d("debugA", tapasList[1].toString())
+                val frenoDeManoDebugger=1
+            }
         }
     }
 }

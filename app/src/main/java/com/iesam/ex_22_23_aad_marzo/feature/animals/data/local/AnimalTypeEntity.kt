@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 const val TYPE_ENTITY ="type"
 @Entity(tableName = TYPE_ENTITY)
 data class AnimalTypeEntity (
-    @PrimaryKey @ColumnInfo(name = "id") val id: Int?,
-    @ColumnInfo(name = "type")val type: String?,
+    @PrimaryKey @ColumnInfo(name = "id") val id: Int,
+    @ColumnInfo(name = "type")val type: String,
 )
